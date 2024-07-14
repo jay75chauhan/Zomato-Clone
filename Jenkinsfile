@@ -68,7 +68,7 @@ pipeline{
         stage('Deploy to container'){
             steps{
                 script{
-                   withDockerRegistry(credentialsId: 'ID', toolName: 'docker'){
+                   withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
                        sh 'docker run -d --name zomato -p 3000:3000 jay75chauhan/zomato:latest'
                     }
                 }
